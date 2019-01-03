@@ -40,7 +40,7 @@ class ProductPropertiesTest(unittest.TestCase):
         self.assertEqual(self.product.brand, None)
 
     def test_price_property(self):
-        self.assertEqual(self.product.price, 99.99)
+        self.assertEqual(str(self.product.price), "99.99")
 
     def test_currency_property(self):
         self.assertEqual(self.product.currency, "USD")
@@ -57,13 +57,13 @@ class OrderPropertiesTest(unittest.TestCase):
         self.assertEqual(self.order.num_line_items, 2)
 
     def test_order_sub_total_property(self):
-        self.assertEqual(self.order.order_sub_total, 289.99)
+        self.assertEqual(str(self.order.order_sub_total), "289.99")
 
     def test_order_tax_property(self):
-        self.assertEqual(self.order.order_tax, 21.11)
+        self.assertEqual(str(self.order.order_tax), "21.11")
 
     def test_order_total_property(self):
-        self.assertEqual(self.order.order_total, 311.10)
+        self.assertEqual(str(self.order.order_total), "311.10")
 
     def test_order_customer_id_property(self):
         self.assertEqual(self.order.customer_id, "CST9104")

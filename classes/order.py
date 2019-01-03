@@ -1,12 +1,16 @@
+from decimal import *
+
 class Order(object):
 
     def __init__(self, attr_list):
 
+        getcontext().prec = 2
+
         self.order_id = attr_list[0]
         self.num_line_items = int(attr_list[1])
-        self.order_sub_total = float(attr_list[2])
-        self.order_tax = float(attr_list[3])
-        self.order_total = float(attr_list[4])
+        self.order_sub_total = Decimal(attr_list[2])
+        self.order_tax = Decimal(attr_list[3])
+        self.order_total = Decimal(attr_list[4])
         self.customer_id = attr_list[5]
 
         self.line_items = []
