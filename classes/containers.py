@@ -77,3 +77,44 @@ class DictContainer(object):
     def get_records(self):
 
         return list(self.records.keys())
+
+class OrderDictContainer(DictContainer):
+
+    def to_json(self):
+
+        data = {
+            "orders" : []
+        }
+
+        # self.records is a dictionary which maps order.id -> an order object
+
+        for key, order in self.records.items():
+
+            # create a json friendly dictionary from data line_item_object
+
+            jfriendly = {
+                'id' : order.order_id,
+                'head' : {
+                    "sub_total" : str(order.order_sub_total),
+                    "tax" : str(order.order_tax),
+                    "total" : str(order.order_total),
+                    "customer" : order.customer_id
+                },
+                'lines' : []
+            }
+
+            for line_item in order.line_items:
+
+                more_jfriendly = {
+                    "position" : line_item.line_number,
+                    "name" : line_item.product_name,
+                    "price" : str(line_item.price),
+                    "quantity" : line_item.quantity,
+                    "row_total" : str(line_item.price * line_item.quantity)
+                }
+
+                jfriendly['lines'].append(more_jfriendly)
+
+            data['orders'].append(jfriendly)
+
+        return data

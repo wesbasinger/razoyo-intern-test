@@ -4,8 +4,6 @@ class Order(object):
 
     def __init__(self, attr_list):
 
-        getcontext().prec = 2
-
         self.order_id = attr_list[0]
         self.num_line_items = int(attr_list[1])
         self.order_sub_total = Decimal(attr_list[2])

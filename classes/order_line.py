@@ -4,8 +4,6 @@ class OrderLine(object):
 
     def __init__(self, attr_list):
 
-        getcontext().prec = 2
-
         self.line_number = int(attr_list[0])
         self.product_name = attr_list[1]
         self.price = Decimal(attr_list[2])

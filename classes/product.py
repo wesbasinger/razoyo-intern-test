@@ -4,8 +4,6 @@ class Product(object):
 
     def __init__(self, attr_list):
 
-        getcontext().prec = 2
-
         self.sku = attr_list[0]
         self.name = attr_list[1]
 
