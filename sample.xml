@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<customers>
+  <customer>
+    <id>str1234</id>
+    <name>str1234</name>
+    <email>str1234</email>
+    <age>1234</age>
+    <gender>str1234</gender>
+  </customer>
+</customers>
