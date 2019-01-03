@@ -1,5 +1,5 @@
 import csv
-from classes.container import Container
+from classes.containers import ListContainer, DictContainer
 from classes.customer import Customer
 from classes.product import Product
 from classes.order import Order
@@ -8,11 +8,11 @@ def main():
 
     # load in data from the test-file.txt
 
-    customers = Container()
+    customers = ListContainer()
 
-    products = Container()
+    products = ListContainer()
 
-    orders = Container()
+    orders = DictContainer()
 
     with open('test-file.txt', newline='') as csvfile:
 
@@ -36,7 +36,7 @@ def main():
 
                 order = Order(row[1:])
 
-                orders.push_record(order)
+                orders.set_record(order)
 
     print(customers.get_records())
     print(products.get_records())
