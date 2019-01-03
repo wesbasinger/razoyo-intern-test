@@ -2,14 +2,7 @@ import csv
 from classes.container import Container
 from classes.customer import Customer
 from classes.product import Product
-
-class Order(object):
-
-    pass
-
-class LineItem(object):
-
-    pass
+from classes.order import Order
 
 def main():
 
@@ -19,6 +12,8 @@ def main():
 
     products = Container()
 
+    orders = Container()
+
     with open('test-file.txt', newline='') as csvfile:
 
         data_reader = csv.reader(csvfile)
@@ -27,18 +22,25 @@ def main():
 
             if row[0] == "customer":
 
-                c = Customer(row[1:])
+                customer = Customer(row[1:])
 
-                customers.push_record(c)
+                customers.push_record(customer)
 
             elif row[0] == "product":
 
-                p = Product(row[1:])
+                product = Product(row[1:])
 
-                products.push_record(p)
+                products.push_record(product)
+
+            elif row[0] == "order":
+
+                order = Order(row[1:])
+
+                orders.push_record(order)
 
     print(customers.get_records())
     print(products.get_records())
+    print(orders.get_records())
 
 if __name__ == '__main__':
 
