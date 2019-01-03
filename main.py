@@ -1,5 +1,5 @@
 import csv
-from classes.containers import ProductListContainer, DictContainer, ListContainer
+from classes.containers import ProductListContainer, DictContainer, CustomerListContainer
 from classes.customer import Customer
 from classes.product import Product
 from classes.order import Order
@@ -9,7 +9,7 @@ def main():
 
     # load in data from the test-file.txt
 
-    customers = ListContainer()
+    customers = CustomerListContainer()
 
     products = ProductListContainer()
 
