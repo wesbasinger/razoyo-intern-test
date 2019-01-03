@@ -1,3 +1,5 @@
+from json import dumps
+
 class ListContainer(object):
 
     def __init__(self):
@@ -95,9 +97,9 @@ class OrderDictContainer(DictContainer):
             jfriendly = {
                 'id' : order.order_id,
                 'head' : {
-                    "sub_total" : str(order.order_sub_total),
-                    "tax" : str(order.order_tax),
-                    "total" : str(order.order_total),
+                    "sub_total" : float(order.order_sub_total),
+                    "tax" : float(order.order_tax),
+                    "total" : float(order.order_total),
                     "customer" : order.customer_id
                 },
                 'lines' : []
@@ -108,13 +110,13 @@ class OrderDictContainer(DictContainer):
                 more_jfriendly = {
                     "position" : line_item.line_number,
                     "name" : line_item.product_name,
-                    "price" : str(line_item.price),
+                    "price" : float(line_item.price),
                     "quantity" : line_item.quantity,
-                    "row_total" : str(line_item.price * line_item.quantity)
+                    "row_total" : float(line_item.price * line_item.quantity)
                 }
 
                 jfriendly['lines'].append(more_jfriendly)
 
             data['orders'].append(jfriendly)
 
-        return data
+        return dumps(data)
