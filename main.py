@@ -1,7 +1,7 @@
 import csv
-from container import Container
-from customer import Customer
-from product import Product
+from classes.container import Container
+from classes.customer import Customer
+from classes.product import Product
 
 class Order(object):
 
