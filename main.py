@@ -1,5 +1,5 @@
 import csv
-from classes.containers import ListContainer, DictContainer
+from classes.containers import ProductListContainer, DictContainer, ListContainer
 from classes.customer import Customer
 from classes.product import Product
 from classes.order import Order
@@ -11,7 +11,7 @@ def main():
 
     customers = ListContainer()
 
-    products = ListContainer()
+    products = ProductListContainer()
 
     orders = DictContainer()
 

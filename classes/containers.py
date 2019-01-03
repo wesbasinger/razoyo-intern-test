@@ -12,6 +12,28 @@ class ListContainer(object):
 
         return self.records
 
+class ProductListContainer(ListContainer):
+
+    def to_csv(self):
+
+        result = '"sku","name","brand","price","currency"\n'
+
+        for product in self.records:
+
+            result += f'"{product.sku}","{product.name}",'
+
+            if not product.brand:
+
+                result += ','
+
+            else:
+
+                result += f'"{product.brand}",'
+
+            result += f'{str(product.price)},"{product.currency}"\n'
+
+        return result
+
 class DictContainer(object):
 
     def __init__(self):
