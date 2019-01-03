@@ -17,4 +17,4 @@ class Order(object):
 
     def add_line_item(self, line_item_object):
 
-        this.line_items.append(line_item_object)
+        self.line_items.append(line_item_object)

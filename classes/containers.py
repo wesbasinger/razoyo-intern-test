@@ -22,6 +22,10 @@ class DictContainer(object):
 
         self.records[record.order_id] = record
 
+    def get_record(self, id):
+
+        return self.records[id]
+
     def get_records(self):
 
         return list(self.records.keys())
