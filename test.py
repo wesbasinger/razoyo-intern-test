@@ -1,8 +1,8 @@
 import unittest
 
-from classes.customer import Customer
-from classes.product import Product
-from classes.order import Order
+from company.customer import Customer
+from company.product import Product
+from company.order import Order
 
 
 class CustomerPropertiesTest(unittest.TestCase):

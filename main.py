@@ -1,9 +1,9 @@
 import csv
-from classes.containers import ProductListContainer, OrderDictContainer, CustomerListContainer
-from classes.customer import Customer
-from classes.product import Product
-from classes.order import Order
-from classes.order_line import OrderLine
+from company.containers import ProductListContainer, OrderDictContainer, CustomerListContainer
+from company.customer import Customer
+from company.product import Product
+from company.order import Order
+from company.order_line import OrderLine
 
 def main():
 
