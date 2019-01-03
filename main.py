@@ -1,30 +1,7 @@
 import csv
-
-class Customer(object):
-
-    def __init__(self, attr_list):
-
-        self.customer_id = attr_list[0]
-        self.name = attr_list[1]
-        self.email_address = attr_list[2]
-
-        if (attr_list[3] == ''):
-
-            self.age = None
-
-        else:
-
-            self.age = int(attr_list[3])
-
-        self.gender = int(attr_list[4])
-
-    def __repr__(self):
-
-        return self.customer_id + " | " + self.name + " | " + self.email_address + " | " + str(self.age) + " | " + str(self.gender)
-
-class Product(object):
-
-    pass
+from container import Container
+from customer import Customer
+from product import Product
 
 class Order(object):
 
@@ -34,25 +11,13 @@ class LineItem(object):
 
     pass
 
-class Container(object):
-
-    def __init__(self):
-
-        self.records = []
-
-    def push_record(self, record):
-
-        self.records.append(record)
-
-    def get_records(self):
-
-        return self.records
-
 def main():
 
     # load in data from the test-file.txt
 
     customers = Container()
+
+    products = Container()
 
     with open('test-file.txt', newline='') as csvfile:
 
@@ -66,9 +31,14 @@ def main():
 
                 customers.push_record(c)
 
+            elif row[0] == "product":
+
+                p = Product(row[1:])
+
+                products.push_record(p)
+
     print(customers.get_records())
-
-
+    print(products.get_records())
 
 if __name__ == '__main__':
 
