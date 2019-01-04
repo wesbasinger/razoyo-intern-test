@@ -18,7 +18,7 @@ class ProductListContainer(ListContainer):
 
     def to_csv(self):
 
-        result = '"sku","name","brand","price","currency"\n'
+        result = '"sku","name","brand","price","currency"\r\n'
 
         for product in self.records:
 
@@ -32,7 +32,7 @@ class ProductListContainer(ListContainer):
 
                 result += f'"{product.brand}",'
 
-            result += f'{str(product.price)},"{product.currency}"\n'
+            result += f'{str(product.price)},"{product.currency}"\r\n'
 
         return result
 
@@ -119,4 +119,4 @@ class OrderDictContainer(DictContainer):
 
             data['orders'].append(jfriendly)
 
-        return dumps(data)
+        return dumps(data,indent=4)
