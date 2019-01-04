@@ -1,6 +1,6 @@
 # Instructions
 
-Running this script should be super simple.  I didn't use any external libraries.  You should just need to run one line from the shell.
+Running this script should be super simple.  I didn't use any external libraries.  You should just need to run one line from the shell.  Please note that Python 3.6 should be used, because I've used some of the newer features of the language, like fstrings.
 
 ```
 python main.py
