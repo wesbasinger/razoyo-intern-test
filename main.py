@@ -9,7 +9,7 @@ from company.outputter import Outputter
 
 CURR_PATH = os.path.dirname(os.path.abspath(__file__))
 
-OUTPUT_PATH = os.path.join(CURR_PATH, 'output')
+OUTPUT_PATH = os.path.join(CURR_PATH, 'output_files')
 
 def main():
 
